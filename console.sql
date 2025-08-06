@@ -110,6 +110,34 @@ CREATE TABLE question
     answer   VARCHAR(100)
 );
 
+-- lấy ngẫu nhiên câu hỏi
+DELIMITER $$
+
+CREATE PROCEDURE get_random_question_id(OUT random_id INT)
+BEGIN
+    SELECT id
+    INTO random_id
+    FROM question
+    ORDER BY RAND()
+    LIMIT 1;
+END$$
+
+DELIMITER ;
+
+-- thêm mới câu hỏi
+DELIMITER $$
+CREATE PROCEDURE add_question(
+    IN in_question_imageUrl VARCHAR(100),
+    IN in_question_answer VARCHAR(100)
+)
+BEGIN
+    INSERT INTO question(imageUrl, answer)
+    VALUES (in_question_imageUrl, in_question_answer);
+END
+$$
+DELIMITER ;
+
+
 CREATE TABLE seed
 (
     id        INT AUTO_INCREMENT PRIMARY KEY,

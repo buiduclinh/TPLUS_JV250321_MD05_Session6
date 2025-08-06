@@ -81,6 +81,28 @@ CREATE TABLE employee
     position VARCHAR(100)
 );
 
+-- lấy danh sách nhân viên
+DELIMITER $$
+CREATE PROCEDURE get_all_employee()
+BEGIN
+    SELECT * FROM employee;
+END
+$$ DELIMITER ;
+
+-- thêm mới nhân viên
+DELIMITER $$
+CREATE PROCEDURE add_employee(
+    IN in_employee_name VARCHAR(100),
+    IN in_employee_email VARCHAR(100),
+    IN in_employee_position VARCHAR(100)
+)
+BEGIN
+    INSERT INTO employee(name, email, position)
+    VALUES (in_employee_name, in_employee_email, in_employee_position);
+END
+$$
+DELIMITER ;
+
 CREATE TABLE question
 (
     id       INT AUTO_INCREMENT PRIMARY KEY,

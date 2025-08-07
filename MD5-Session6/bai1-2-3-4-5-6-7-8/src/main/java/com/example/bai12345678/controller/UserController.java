@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping(value = {"/","/users"})
 public class UserController {
     @Autowired
     private UserDAO userDAO;
@@ -25,6 +25,7 @@ public class UserController {
     @GetMapping
     public String listUsers(Model model) {
         List<User> users = userDAO.getAllUsers();
+        System.out.println(users);
         model.addAttribute("users", users);
         return "UserList";
     }

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = {"/", "/employees"})
+@RequestMapping(value = { "/employees"})
 public class EmployeeController {
     @Autowired
     EmployeeDAO employeeDAO;
@@ -29,13 +29,18 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public String addEmployee(@ModelAttribute @Valid Employee employee, BindingResult result, Model model) {
+    public String saveEmployee(@ModelAttribute @Valid Employee employee, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("employee", employeeDAO.getAllEmployee()); // nếu cần quay lại danh sách
             return "employeeForm"; // Trả về lại form nếu có lỗi
         }
 
         employeeDAO.addEmployee(employee);
-        return "redirect:/employees";
+        return "redirect:/addEmployee";
+    }
+
+    @GetMapping("/addEmployee")
+    public String addEmployee() {
+        return "addEmployee";
     }
 }

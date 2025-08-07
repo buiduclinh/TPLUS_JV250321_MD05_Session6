@@ -26,7 +26,7 @@
   </tr>
   </thead>
   <tbody>
-  <c:forEach var="user" items="${users}" varStatus="loop">
+  <c:forEach items="${users}"  var="user" varStatus="loop">
     <tr>
       <td>${loop.index + 1}</td>
       <td>${user.id}</td>

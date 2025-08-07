@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class DBConn {
     private static DBConn INSTANCE;
-    private static final String URL = "jdbc:mysql://localhost:3306/movie_management";
+    private static final String URL = "jdbc:mysql://localhost:3306/md5_ss6";
     private static final String USER = "root";
     private static final String PASSWORD = "123456789";
 

@@ -37,6 +37,6 @@
 </table>
 
 <br>
-<a href="addEmployee.jsp">Thêm nhân viên mới</a>
+<a href="<%=request.getContextPath()%>/employees/addEmployee">Thêm nhân viên mới</a>
 </body>
 </html>

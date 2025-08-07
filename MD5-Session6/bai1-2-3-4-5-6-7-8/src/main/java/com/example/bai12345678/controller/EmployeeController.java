@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/employees")
+@RequestMapping(value = {"/", "/employees"})
 public class EmployeeController {
     @Autowired
     EmployeeDAO employeeDAO;
 
-    @GetMapping
+    @GetMapping()
     public String getAllEmployees(Model model) {
         List<Employee> employeeList = employeeDAO.getAllEmployee();
         model.addAttribute("employeeList", employeeList);
-        return "employees";
+        return "employeeView";
     }
 
     @PostMapping

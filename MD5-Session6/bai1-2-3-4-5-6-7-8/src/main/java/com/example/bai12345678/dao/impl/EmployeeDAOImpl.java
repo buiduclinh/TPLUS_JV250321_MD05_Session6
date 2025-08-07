@@ -3,6 +3,7 @@ package com.example.bai12345678.dao.impl;
 import com.example.bai12345678.dao.EmployeeDAO;
 import com.example.bai12345678.model.Employee;
 import com.example.bai12345678.util.DBConn;
+import org.springframework.stereotype.Repository;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -10,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public List<Employee> getAllEmployee() {

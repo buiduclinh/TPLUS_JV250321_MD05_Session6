@@ -3,9 +3,10 @@ package com.example.bai12345678.dao.impl;
 import com.example.bai12345678.dao.QuestionDAO;
 import com.example.bai12345678.model.Question;
 import com.example.bai12345678.util.DBConn;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
-
+@Repository
 public class QuestionDAOImpl implements QuestionDAO {
     @Override
     public Question getRandomQuestion() {

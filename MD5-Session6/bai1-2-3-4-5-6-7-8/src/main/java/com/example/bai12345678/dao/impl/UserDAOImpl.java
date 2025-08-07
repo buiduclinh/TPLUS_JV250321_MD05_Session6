@@ -3,6 +3,7 @@ package com.example.bai12345678.dao.impl;
 import com.example.bai12345678.dao.UserDAO;
 import com.example.bai12345678.model.User;
 import com.example.bai12345678.util.DBConn;
+import org.springframework.stereotype.Repository;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -11,7 +12,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class UserDAOImpl implements UserDAO {
     @Override
     public List<User> getAllUsers() {

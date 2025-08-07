@@ -3,6 +3,7 @@ package com.example.bai12345678.dao.impl;
 import com.example.bai12345678.dao.ProductDAO;
 import com.example.bai12345678.model.Product;
 import com.example.bai12345678.util.DBConn;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.sql.CallableStatement;
@@ -11,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class ProductDAOImpl implements ProductDAO {
     @Override
     public List<Product> findAll() {
